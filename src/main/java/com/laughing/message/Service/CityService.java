@@ -63,5 +63,12 @@ public class CityService {
 
     }
 
+    /**
+     * 查询全部
+     */
+    public List<String> getAll() {
+
+        return cityListMapper.cityListName(null);
+    }
 
 }

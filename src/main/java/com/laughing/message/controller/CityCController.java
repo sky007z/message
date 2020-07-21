@@ -9,6 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Fu zihao
  * @version 1.0
@@ -34,7 +37,16 @@ public class CityCController {
                                           @RequestParam("name") String name,
                                           @RequestParam("code") String code) {
 
-        return cityService.getAllCityPages(current, size,name,code);
+        return cityService.getAllCityPages(current, size, name, code);
     }
 
+    /**
+     * 查询全部
+     */
+    @ApiOperation("获取全部city")
+    @GetMapping("/getcity")
+    public List<String> getAll() {
+
+        return cityService.getAll();
+    }
 }

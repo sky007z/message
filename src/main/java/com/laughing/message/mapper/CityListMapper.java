@@ -3,7 +3,11 @@ package com.laughing.message.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.laughing.message.dao.CityList;
 import com.laughing.message.dao.Phone;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import java.sql.Wrapper;
+import java.util.List;
 
 /**
  * @author Fu zihao
@@ -13,4 +17,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface CityListMapper extends BaseMapper<CityList> {
+    @Select("SELECT name FROM city_list")
+    List<String> cityListName(Wrapper wrapper);
 }
