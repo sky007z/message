@@ -41,8 +41,10 @@ https://console.cloud.tencent.com/smsv2
 **按照流程申请，腾讯云会免费赠送200条短信。**
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic6.png)
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic7.png)
-**创建你需要的模板**
+### 创建你需要的短信模板
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic8.jpg)
+由于短信模板的id不相同，需要更改templateID。
+如发送天气短信的WeatherController类sendWeatherMsgTom方法，需要更改你申请的天气短信templateID
 ### 添加secretId，secretKey，appid
 修改SendSmsService、SendStatusStatistics两个短信发送服务类。
 ` Credential cred = new Credential Credential(String secretId, String secretKey)
@@ -61,7 +63,8 @@ http://localhost:9522/weather/setAll/7d
 全部用户发送明日天气短信
 http://localhost:9522/weather/send/msg/tom
 
-
+### 定时任务
+采用spring-boot的定时任务，配置文件为task-config.properties，可实现自动定时发送。
             
 ## docker部署
 ### 1、打包
@@ -79,4 +82,7 @@ http://localhost:9522/weather/send/msg/tom
 `docker logs message`
 
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/docker1.png)
+
+
+如果有帮助，请点亮一颗星，如有问题请联系-微信号：qq619426619 
 
