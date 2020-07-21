@@ -4,7 +4,7 @@
 短信效果：
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic1.jpg)
 前端地址：
-
+https://github.com/laughingfuzihao/message-ui
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic2.png)
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic3.png)
 ![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic4.png)
