@@ -49,7 +49,7 @@ public class SendSmsService {
             SendSmsRequest req = new SendSmsRequest();
 
             /* 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666 */
-            String appid = "1400398100";
+            String appid = "xxxxxxx";
             req.setSmsSdkAppid(appid);
 
             /* 短信签名内容: 使用 UTF-8 编码，必须填写已审核通过的签名，可登录 [短信控制台] 查看签名信息 */

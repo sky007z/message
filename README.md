@@ -25,7 +25,7 @@
 
 ## 数据库
 运行前请执行weather.sql建库
-## 运行
+## 后端运行
 
 mvn install
 
@@ -33,14 +33,46 @@ mvn install
 
 运行application
 
+http://localhost:9522/swagger-ui.html
+
+## 使用 以发送短信为例
+### 注册腾讯云SMS服务
+https://console.cloud.tencent.com/smsv2
+**按照流程申请，腾讯云会免费赠送200条短信。**
+![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic6.png)
+![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic7.png)
+**创建你需要的模板**
+![docker1](https://github.com/laughingfuzihao/message/blob/master/src/main/resources/static/pic/pic8.jpg)
+### 添加secretId，secretKey，appid
+修改SendSmsService、SendStatusStatistics两个短信发送服务类。
+` Credential cred = new Credential Credential(String secretId, String secretKey)
+  String appid = "xxxxxxx";
+  `
+
+### 添加用户
+可用前端添加
+可以在swagger-ui中查看添加接口
+http://localhost:9522/phone/add/{name}/{phone}/{cityCode}/{state}/{rule}/{birthday}/{birthdayState}
+cityCode可在city_list查询得知
+### jsoup获取天气数据
+存储全部用户绑定城市的7日天气信息
+http://localhost:9522/weather/setAll/7d
+### 发送天气短信
+全部用户发送明日天气短信
+http://localhost:9522/weather/send/msg/tom
+
+
+            
 ## docker部署
 ### 1、打包
 `mvn package`
 将message-0.0.1-SNAPSHOT.jar重命名为message.jar，并将message.jar和目录下的Dockerfile上传至服务器同级目录。
+
 ### 2、镜像
 为保证定时任务准确，请检查服务器时区，并把docker的时间卷localtime挂载出来
 `  docker build -t message .
    docker run -d -p 9522:9522 --name message message -v /etc/localtime:/etc/localtime:ro`
+
 ### 3、日志
 `docker ps`   
 
