@@ -4,6 +4,7 @@ import com.laughing.message.Service.SendStatusStatistics;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import java.util.Date;
  * @Description:
  * @date 2020/7/17 14:52
  */
+@Slf4j
 @RestController
 @Api(tags = "短信统计接口")
 @RequestMapping("/msg")
@@ -42,5 +44,13 @@ public class SendMsgController {
         long start = Long.parseLong(dateFormat.format(new Date()).substring(0, 8) + "00");
         long end = Long.parseLong(dateFormat.format(new Date()));
         return sendStatusStatistics.getSendStatusStatistics("1400398100", start, end);
+    }
+
+    @ApiOperation("日志测试")
+    @GetMapping("/test")
+    public void testLog()   {
+        log.info("info日志测试----现在时间："+dateFormat.format(new Date()));
+        log.debug("debug日志测试----现在时间："+dateFormat.format(new Date()));
+
     }
 }

@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/weather?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
     username: root
-    password: xxxxx
+    password: xxxx
     driver-class-name: com.mysql.jdbc.Driver
   application:
     name: weather
@@ -11,6 +11,7 @@ spring:
 server:
   port: 9522
 
-
-
-
+# 开启mybatis-plus日志 开发可以
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

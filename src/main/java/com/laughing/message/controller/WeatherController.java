@@ -152,7 +152,7 @@ public class WeatherController {
                 String[] templateParams = {name, cityName, time, weather, temperature};
                 String templateID = "663325";
                 sendSms.sendMsg(templateID, phoneNumbers, templateParams);
-                log.info("现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
+                log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
             }
         }
     }
@@ -186,7 +186,7 @@ public class WeatherController {
                 String[] templateParams = {name, cityName, time, weather, temperature};
                 String templateID = "663325";
                 sendSms.sendMsg(templateID, phoneNumbers, templateParams);
-                log.info("现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
+                log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
             }
         }
     }

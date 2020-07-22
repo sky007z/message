@@ -57,7 +57,7 @@ public class BirthdayController {
                 String[] templateParams = {name,"laughing"};
                 String templateID = "665407";
                 sendSms.sendMsg(templateID, phoneNumbers, templateParams);
-                log.info("日期：" + birthdayFormat.format(new Date()) + ",生日祝福短信已发送给" + name);
+                log.info("生日短信发送，日期：" + birthdayFormat.format(new Date()) + ",生日祝福短信已发送给" + name);
 
             }
 
