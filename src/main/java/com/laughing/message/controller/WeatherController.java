@@ -65,7 +65,7 @@ public class WeatherController {
      *
      * @throws IOException
      */
-    @ApiOperation("全部用户发送明日天气短信")
+    @ApiOperation("全部用户发送明日天气短信 当晚发送明日天气短信 晚上8点10分")
     @Scheduled(cron = "${cron_tom_send}")
     @GetMapping("/send/msg/tom")
     public void sendWeatherMsgTom() throws IOException {
@@ -98,7 +98,7 @@ public class WeatherController {
      *
      * @throws IOException
      */
-    @ApiOperation("全部用户发送今日天气短信")
+    @ApiOperation("全部用户发送今日天气短信 当天发送今日短信 早上7点10分")
     @GetMapping("/send/msg/tod")
     @Scheduled(cron = "${cron_tod_send}")
     public void sendWeatherMsgTod() throws IOException {
@@ -127,7 +127,7 @@ public class WeatherController {
     /**
      * 全部用户发送明日天气短信（仅极端天气）
      */
-    @ApiOperation("全部用户发送明日天气短信（仅极端天气）")
+    @ApiOperation("全部用户发送明日天气短信（仅极端天气）晚上8点10分")
     @Scheduled(cron = "${cron_tom_send}")
     @GetMapping("/send/msg/tom/rain")
     public void sendRainWeatherMsgTom() throws IOException {
@@ -161,8 +161,8 @@ public class WeatherController {
     /**
      * 全部用户发送今日天气短信（仅极端天气）
      */
-    @ApiOperation("全部用户发送今日天气短信（仅极端天气）")
-    @Scheduled(cron = "${cron_tom_send}")
+    @ApiOperation("全部用户发送今日天气短信（仅极端天气）早上7点10分")
+    @Scheduled(cron = "${cron_tod_send}")
     @GetMapping("/send/msg/tod/rain")
     public void sendRainWeatherMsgTod() throws IOException {
         List<Phone> phoneList = phoneService.getAllUserfour();
