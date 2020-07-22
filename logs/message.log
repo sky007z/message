@@ -1,0 +1,42 @@
+2020-07-22 10:14:23,481 INFO [com.laughing.message.MessageApplication] - Starting MessageApplication on FJ25HMS7RSDD3EY with PID 11692 (D:\laughing-code\message\target\classes started by Administrator in D:\laughing-code\message)
+2020-07-22 10:14:23,482 INFO [com.laughing.message.MessageApplication] - No active profile set, falling back to default profiles: default
+2020-07-22 10:14:23,553 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-22 10:14:23,553 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-22 10:14:24,917 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9522 (http)
+2020-07-22 10:14:25,015 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1445 ms
+2020-07-22 10:14:25,683 WARN [com.baomidou.mybatisplus.core.metadata.TableInfoHelper] - Can not find table primary key in Class: "com.laughing.message.dao.CityList".
+2020-07-22 10:14:26,360 INFO [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-22 10:14:26,444 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-22 10:14:26,481 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2020-07-22 10:14:26,607 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] - Initializing ExecutorService 'taskScheduler'
+2020-07-22 10:14:26,669 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9522 (http) with context path ''
+2020-07-22 10:14:26,670 INFO [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] - Context refreshed
+2020-07-22 10:14:26,688 INFO [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] - Found 1 custom documentation plugin(s)
+2020-07-22 10:14:26,726 INFO [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] - Scanning for api listing references
+2020-07-22 10:14:26,897 INFO [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] - Generating unique operation named: getAllPhonePageUsingGET_1
+2020-07-22 10:14:26,947 INFO [com.laughing.message.MessageApplication] - Started MessageApplication in 3.951 seconds (JVM running for 5.207)
+2020-07-22 10:14:26,950 INFO [com.laughing.message.MessageApplication] - 项目启动成功，启动时间：2020072210
+2020-07-22 10:15:52,387 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] - Shutting down ExecutorService 'taskScheduler'
+2020-07-22 10:15:52,389 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-22 10:15:55,671 INFO [com.laughing.message.MessageApplication] - Starting MessageApplication on FJ25HMS7RSDD3EY with PID 19936 (D:\laughing-code\message\target\classes started by Administrator in D:\laughing-code\message)
+2020-07-22 10:15:55,672 INFO [com.laughing.message.MessageApplication] - No active profile set, falling back to default profiles: default
+2020-07-22 10:15:55,737 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-22 10:15:55,738 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-22 10:15:57,138 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9522 (http)
+2020-07-22 10:15:57,250 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1512 ms
+2020-07-22 10:15:58,493 INFO [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-22 10:15:58,569 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-22 10:15:58,606 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2020-07-22 10:15:58,721 INFO [org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] - Initializing ExecutorService 'taskScheduler'
+2020-07-22 10:15:58,777 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9522 (http) with context path ''
+2020-07-22 10:15:58,778 INFO [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] - Context refreshed
+2020-07-22 10:15:58,794 INFO [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] - Found 1 custom documentation plugin(s)
+2020-07-22 10:15:58,825 INFO [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] - Scanning for api listing references
+2020-07-22 10:15:59,002 INFO [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] - Generating unique operation named: getAllPhonePageUsingGET_1
+2020-07-22 10:15:59,058 INFO [com.laughing.message.MessageApplication] - Started MessageApplication in 3.956 seconds (JVM running for 5.089)
+2020-07-22 10:15:59,061 INFO [com.laughing.message.MessageApplication] - 项目启动成功，启动时间：2020072210
+2020-07-22 10:16:22,722 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2020-07-22 10:16:22,729 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 6 ms
+2020-07-22 10:16:22,776 INFO [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2020-07-22 10:16:22,777 WARN [com.zaxxer.hikari.util.DriverDataSource] - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-07-22 10:16:23,313 INFO [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
