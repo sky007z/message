@@ -1,12 +1,9 @@
-package com.laughing.message.Service;
+package com.laughing.message.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.laughing.message.dao.CityList;
-import com.laughing.message.dao.Phone;
 import com.laughing.message.mapper.CityListMapper;
-import com.tencentcloudapi.ecm.v20190719.models.City;
 import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

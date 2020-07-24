@@ -1,15 +1,13 @@
 package com.laughing.message.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.Service.CityService;
+import com.laughing.message.service.CityService;
 import com.laughing.message.dao.CityList;
-import com.laughing.message.dao.Phone;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +19,7 @@ import java.util.List;
 @RestController
 @Api(tags = "城市接口")
 @RequestMapping("/city")
-public class CityCController {
+public class CityController {
     @Autowired
     private CityService cityService;
 

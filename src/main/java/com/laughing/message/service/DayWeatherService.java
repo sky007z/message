@@ -1,24 +1,18 @@
-package com.laughing.message.Service;
+package com.laughing.message.service;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.dao.CityList;
-import com.laughing.message.dao.Phone;
 import com.laughing.message.dao.WeatherDay;
 import com.laughing.message.mapper.WeatherDayMapper;
 
-import io.swagger.annotations.ApiOperation;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 
 import java.io.IOException;
@@ -129,9 +123,9 @@ public class DayWeatherService {
         }
 
 
-        Page<WeatherDay> WeatherPage = new Page<>(current, size);//参数一是当前页，参数二是每页个数
-        WeatherPage = weatherDayMapper.selectPage(WeatherPage, wrapper);
-        return WeatherPage;
+        Page<WeatherDay> weatherPage = new Page<>(current, size);//参数一是当前页，参数二是每页个数
+        weatherPage = weatherDayMapper.selectPage(weatherPage, wrapper);
+        return weatherPage;
     }
 
 

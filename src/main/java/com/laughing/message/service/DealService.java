@@ -1,11 +1,8 @@
-package com.laughing.message.Service;
+package com.laughing.message.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.dao.CityList;
 import com.laughing.message.dao.Deal;
-import com.laughing.message.dao.Phone;
-import com.laughing.message.mapper.CityListMapper;
 import com.laughing.message.mapper.DealMapper;
 import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +46,9 @@ public class DealService {
         if (!StringUtil.isBlank(name)) {
             wrapper.like("name", name);
         }
-        Page<Deal> DealPage = new Page<>(current, size);//参数一是当前页，参数二是每页个数
-        DealPage = dealMapper.selectPage(DealPage, wrapper);
-        return DealPage;
+        Page<Deal> dealPage = new Page<>(current, size);//参数一是当前页，参数二是每页个数
+        dealPage = dealMapper.selectPage(dealPage, wrapper);
+        return dealPage;
     }
     /**
      * 查询全部 早间提醒

@@ -1,17 +1,15 @@
 package com.laughing.message.controller;
 
-import com.laughing.message.Service.DayWeatherService;
-import com.laughing.message.Service.PhoneService;
-import com.laughing.message.Service.SendSmsService;
+import com.laughing.message.service.DayWeatherService;
+import com.laughing.message.service.PhoneService;
+import com.laughing.message.service.SendSmsService;
 import com.laughing.message.dao.Phone;
-import com.laughing.message.dao.WeatherDay;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,7 +43,7 @@ public class BirthdayController {
      */
     @Scheduled(cron = "${cron_birthday_send}")
     @GetMapping("/send")
-    private void SendBirthday(){
+    private void sendBirthday(){
         List<Phone> phoneList = phoneService.getAllBirthdayUser();
         for (int i = 0; phoneList.size() > i; i++) {
             // 用户信息
@@ -55,8 +53,8 @@ public class BirthdayController {
             if(birthdayFormat.format(new Date()).equals(birthdayFormat.format(birthday)) ){
                 String[] phoneNumbers = {phone};
                 String[] templateParams = {name,"laughing"};
-                String templateID = "665407";
-                sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                String templateId = "665407";
+                sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                 log.info("生日短信发送，日期：" + birthdayFormat.format(new Date()) + ",生日祝福短信已发送给" + name);
 
             }

@@ -1,12 +1,10 @@
 package com.laughing.message.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.Service.DealService;
-import com.laughing.message.Service.PhoneService;
-import com.laughing.message.Service.SendSmsService;
+import com.laughing.message.service.DealService;
+import com.laughing.message.service.PhoneService;
+import com.laughing.message.service.SendSmsService;
 import com.laughing.message.dao.Deal;
-import com.laughing.message.dao.Phone;
-import com.laughing.message.dao.WeatherDay;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -63,17 +61,17 @@ public class DealController {
         deal.setMsg(msg);
         deal.setMsgFlag(msgFlag);
         deal.setNing(ning);
-        if (!StringUtil.isBlank(weekDays) && msgFlag.equals("3")) {
+        if (!StringUtil.isBlank(weekDays) && "3".equals(msgFlag)) {
             deal.setWeekDays(weekDays);
             deal.setMsgDate(null);
             deal.setMonthDays(null);
         }
-        if (!StringUtil.isBlank(monthDays) && msgFlag.equals("2")) {
+        if (!StringUtil.isBlank(monthDays) && "2".equals(msgFlag)) {
             deal.setMonthDays(monthDays);
             deal.setMsgDate(null);
             deal.setWeekDays(null);
         }
-        if (!StringUtil.isBlank(msgDate) && msgFlag.equals("1")) {
+        if (!StringUtil.isBlank(msgDate) && "1".equals(msgFlag)) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");//注意月份是MM
             Date date = simpleDateFormat.parse(msgDate);
             deal.setMsgDate(date);
@@ -128,32 +126,32 @@ public class DealController {
             String phone = phoneService.getUserPhoneById(dealList.get(i).getUserId());
             String msg = dealList.get(i).getMsg();
             String msgFlag = dealList.get(i).getMsgFlag();
-            if (msgFlag.equals("1")) {
+            if ("1".equals(msgFlag)) {
                 if (Format.format(new Date()).equals(Format.format(dealList.get(i).getMsgDate())) ) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",单次提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }
-            if (msgFlag.equals("2")) {
+            if ("2".equals(msgFlag)) {
                 if (String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).equals(dealList.get(i).getMonthDays())) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",每月提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }
-            if (msgFlag.equals("3")) {
+            if ("3".equals(msgFlag)) {
                 String[] weekDays = {"7", "1", "2", "3", "4", "5", "6"};
                 Calendar calendar = Calendar.getInstance();
                 if (weekDays[calendar.get(Calendar.DAY_OF_WEEK) - 1].equals(dealList.get(i).getWeekDays())) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",每周提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }
@@ -176,32 +174,32 @@ public class DealController {
             String phone = phoneService.getUserPhoneById(dealList.get(i).getUserId());
             String msg = dealList.get(i).getMsg();
             String msgFlag = dealList.get(i).getMsgFlag();
-            if (msgFlag.equals("1")) {
+            if ("1".equals(msgFlag)) {
                 if (Format.format(new Date()).equals(Format.format(dealList.get(i).getMsgDate()))) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",单次提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }
-            if (msgFlag.equals("2")) {
+            if ("2".equals(msgFlag)) {
                 if (String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).equals(dealList.get(i).getMonthDays())) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",每月提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }
-            if (msgFlag.equals("3")) {
+            if ("3".equals(msgFlag)) {
                 String[] weekDays = {"7", "1", "2", "3", "4", "5", "6"};
                 Calendar calendar = Calendar.getInstance();
                 if (weekDays[calendar.get(Calendar.DAY_OF_WEEK) - 1].equals(dealList.get(i).getWeekDays())) {
                     String[] phoneNumbers = {phone};
                     String[] templateParams = {Format2.format(new Date()), msg};
-                    String templateID = "665408";
-                    sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                    String templateId = "665408";
+                    sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                     log.info("现在时间：" + Format.format(new Date()) + ",每周提醒信息已发送给：" + phoneService.getUserById(dealList.get(i).getUserId()));
                 }
             }

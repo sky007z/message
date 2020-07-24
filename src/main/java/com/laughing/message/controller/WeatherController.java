@@ -1,10 +1,10 @@
 package com.laughing.message.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.Service.CityService;
-import com.laughing.message.Service.DayWeatherService;
-import com.laughing.message.Service.PhoneService;
-import com.laughing.message.Service.SendSmsService;
+import com.laughing.message.service.CityService;
+import com.laughing.message.service.DayWeatherService;
+import com.laughing.message.service.PhoneService;
+import com.laughing.message.service.SendSmsService;
 import com.laughing.message.dao.Phone;
 import com.laughing.message.dao.WeatherDay;
 import io.swagger.annotations.Api;
@@ -85,8 +85,8 @@ public class WeatherController {
             // 设置发送参数
             String[] phoneNumbers = {phone};
             String[] templateParams = {name, cityName, time, weather, temperature};
-            String templateID = "663325";
-            sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+            String templateId = "663325";
+            sendSms.sendMsg(templateId, phoneNumbers, templateParams);
             log.info("现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
         }
     }
@@ -118,8 +118,8 @@ public class WeatherController {
             // 设置发送参数
             String[] phoneNumbers = {phone};
             String[] templateParams = {name, cityName, time, weather, temperature};
-            String templateID = "663325";
-            sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+            String templateId = "663325";
+            sendSms.sendMsg(templateId, phoneNumbers, templateParams);
             log.info("现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
         }
     }
@@ -150,8 +150,8 @@ public class WeatherController {
                 // 设置发送参数
                 String[] phoneNumbers = {phone};
                 String[] templateParams = {name, cityName, time, weather, temperature};
-                String templateID = "663325";
-                sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                String templateId = "663325";
+                sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                 log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
             }
         }
@@ -184,8 +184,8 @@ public class WeatherController {
                 // 设置发送参数
                 String[] phoneNumbers = {phone};
                 String[] templateParams = {name, cityName, time, weather, temperature};
-                String templateID = "663325";
-                sendSms.sendMsg(templateID, phoneNumbers, templateParams);
+                String templateId = "663325";
+                sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                 log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
             }
         }

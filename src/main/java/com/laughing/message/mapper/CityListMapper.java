@@ -17,6 +17,10 @@ import java.util.List;
  */
 @Repository
 public interface CityListMapper extends BaseMapper<CityList> {
+    /** 查找城市名
+     * @param wrapper
+     * @return
+     */
     @Select("SELECT name FROM city_list")
     List<String> cityListName(Wrapper wrapper);
 }

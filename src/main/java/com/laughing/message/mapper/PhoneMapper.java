@@ -20,6 +20,10 @@ import java.util.List;
 @Repository
 public interface PhoneMapper extends BaseMapper<Phone> {
 
+    /**
+     * @param wrapper
+     * @return
+     */
     @Select("SELECT COUNT(*) FROM phone GROUP BY city_code")
     List<String> countCity(Wrapper wrapper);
 }

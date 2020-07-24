@@ -1,7 +1,7 @@
 package com.laughing.message.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.Service.PhoneService;
+import com.laughing.message.service.PhoneService;
 import com.laughing.message.dao.Phone;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,6 +30,8 @@ public class PhoneController {
 
     private static final SimpleDateFormat birthdayFormat = new SimpleDateFormat("MM-dd");
 
+    public static final String PHONE_CODE = "+86";
+
     /**
      * 添加用户
      *
@@ -45,8 +47,8 @@ public class PhoneController {
                            @PathVariable("rule") String rule,
                            @PathVariable("birthday") Date birthday,
                            @PathVariable("birthdayState") String birthdayState) {
-        if (!phone.contains("+86")) {
-            phone = "+86" + phone;
+        if (!phone.contains(PHONE_CODE)) {
+            phone = PHONE_CODE + phone;
         }
         int result = phoneService.addPhone(name, phone, cityCode, state, rule, birthday, birthdayState);
         if (result == 1) {
