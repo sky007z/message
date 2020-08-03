@@ -62,20 +62,6 @@
             <groupId>com.tencentcloudapi</groupId>
             <artifactId>tencentcloud-sdk-java</artifactId>
             <version>3.1.90</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>log4j</artifactId>
-                    <groupId>log4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>okhttp</artifactId>
-                    <groupId>com.squareup.okhttp</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>okio</artifactId>
-                    <groupId>com.squareup.okio</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>

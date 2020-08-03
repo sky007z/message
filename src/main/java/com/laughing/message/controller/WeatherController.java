@@ -1,10 +1,8 @@
 package com.laughing.message.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.laughing.message.service.CityService;
-import com.laughing.message.service.DayWeatherService;
-import com.laughing.message.service.PhoneService;
-import com.laughing.message.service.SendSmsService;
+import com.laughing.message.dao.SendUserLog;
+import com.laughing.message.service.*;
 import com.laughing.message.dao.Phone;
 import com.laughing.message.dao.WeatherDay;
 import io.swagger.annotations.Api;
@@ -41,6 +39,10 @@ public class WeatherController {
     private PhoneService phoneService;
     @Autowired
     private CityService cityService;
+    @Autowired
+    private SendUserLogService sendUserLogService;
+    @Autowired
+    private SendUserLog sendUserLog;
 
 
     /**
@@ -88,6 +90,11 @@ public class WeatherController {
             String templateId = "663325";
             sendSms.sendMsg(templateId, phoneNumbers, templateParams);
             log.info("现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
+            sendUserLog.setPhoneId(phoneList.get(i).getId());
+            sendUserLog.setName(name);
+            sendUserLog.setMsg("明日预报已发送给" + name + "," + time + cityName + weather);
+            sendUserLog.setSendtTime((new Date()));
+            sendUserLogService.setSendLogs(sendUserLog);
         }
     }
 
@@ -121,6 +128,12 @@ public class WeatherController {
             String templateId = "663325";
             sendSms.sendMsg(templateId, phoneNumbers, templateParams);
             log.info("现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
+
+            sendUserLog.setPhoneId(phoneList.get(i).getId());
+            sendUserLog.setName(name);
+            sendUserLog.setMsg("今日预报已发送给" + name + "," + time + cityName + weather);
+            sendUserLog.setSendtTime((new Date()));
+            sendUserLogService.setSendLogs(sendUserLog);
         }
     }
 
@@ -153,6 +166,11 @@ public class WeatherController {
                 String templateId = "663325";
                 sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                 log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",明日预报已发送给" + name);
+                sendUserLog.setPhoneId(phoneList.get(i).getId());
+                sendUserLog.setName(name);
+                sendUserLog.setMsg("极端天气!明日预报已发送给" + name + "," + time + cityName + weather);
+                sendUserLog.setSendtTime((new Date()));
+                sendUserLogService.setSendLogs(sendUserLog);
             }
         }
     }
@@ -187,6 +205,11 @@ public class WeatherController {
                 String templateId = "663325";
                 sendSms.sendMsg(templateId, phoneNumbers, templateParams);
                 log.info("极端天气！现在时间：" + dateFormat.format(new Date()) + ",今日预报已发送给" + name);
+                sendUserLog.setPhoneId(phoneList.get(i).getId());
+                sendUserLog.setName(name);
+                sendUserLog.setMsg("极端天气!今日预报已发送给" + name + "," + time + cityName + weather);
+                sendUserLog.setSendtTime((new Date()));
+                sendUserLogService.setSendLogs(sendUserLog);
             }
         }
     }
@@ -234,7 +257,6 @@ public class WeatherController {
 
         return dayWeatherService.getAllWeatherPages(current, size, cityCode, time, weather);
     }
-
 
 
 }
